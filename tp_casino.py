@@ -127,7 +127,7 @@ def getNumeroMise(numeroMise):
 def getArgentMise(argentMise,Joueur):
     #Verification si l'argent mise est belle et bien dans en norme avec l'argent du joueur et reste dans la boucle que si la condition n'est pas respecter
     argentMise = -1
-    while argentMise <= 0 or argentMise > p1.argent:
+    while argentMise <= 0 or argentMise > Joueur.argent:
         argentMise = 100
 
         try:
