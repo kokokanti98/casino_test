@@ -62,7 +62,7 @@ class Casino:
 #Verification si le nom du joueur entrer par l'utilisateur est belle et bien un string et reste dans la boucle que si la condition n'est pas respecter
 nom_joueur = -1
 while nom_joueur == -1:
-    nom_joueur = input("Quel est votre prenom?\n")
+    nom_joueur = "The Mike"
     #Dans le cas ou l'utlisateur a entrer un nom pas en string(int,...)    
     try:
         nom_joueur = int(nom_joueur)
@@ -76,7 +76,7 @@ while nom_joueur == -1:
 #Verification si l'argent total  sur le comtpe du joueur entrer par l'utilisateur est belle et bien un integer et reste dans la boucle que si la condition n'est pas respecter
 argent_compte = -1
 while argent_compte == -1:
-    argent_compte = input("Combien d'argent vous avez sur vous?\n")
+    argent_compte = 5000
     #Dans le cas ou l'utlisateur a entrer un argent en int    
     try:
         argent_compte = int(argent_compte)
@@ -106,8 +106,7 @@ def getNumeroMise(numeroMise):
     #Verification si le numero mise est belle et bien dans 0-49 et reste dans la boucle que si la condition n'est pas respecter
     numeroMise = -1
     while numeroMise < 0 or numeroMise > 49:
-        numeroMise = input(
-            "Sur quel numéro souhaitez vous miser entre 0-49 ?\n")
+        numeroMise = 10
 
         try:
             numeroMise = int(numeroMise)
@@ -129,9 +128,7 @@ def getArgentMise(argentMise,Joueur):
     #Verification si l'argent mise est belle et bien dans en norme avec l'argent du joueur et reste dans la boucle que si la condition n'est pas respecter
     argentMise = -1
     while argentMise <= 0 or argentMise > p1.argent:
-
-        print("Combien souhaitez vous miser ?\n")
-        argentMise = input()
+        argentMise = 100
 
         try:
             argentMise = int(argentMise)
@@ -168,7 +165,7 @@ while continuerPartie == True:
     else:
         p1.voir_compte()
         print("Voulez vous continuez ? o/n")
-        testContinuerPartie = input()
+        testContinuerPartie = "n"
         print("\n")
         #Dans le cas ou le joueur quitte le casino
         if testContinuerPartie == "n" or testContinuerPartie == "N":
