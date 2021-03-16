@@ -30,4 +30,5 @@ def test_argent_mise():
 def test_numero_mise():
     numeroMise = 1
     numeroMise = getNumeroMise(numeroMise)
-    assert numeroMise <= 49 && numeroMise >= 0, "Numero mise en dehors de l intervalle 0-49 !"
+    assert numeroMise <= 49,"Numero mise en dehors de l intervalle 0-49/ Supérieur à 49 !" 
+    assert numeroMise >= 0, "Numero mise en dehors de l intervalle 0-49/ Négatif!"
