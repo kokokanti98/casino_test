@@ -101,13 +101,14 @@ c1 = Casino("Casa Blanca",p1)
 #Variable booleen de la boucle du jeu(pour chaque partie de roulette)
 continuerPartie = True
 
-while continuerPartie == True:
-    
+#NumeroMise
+def getNumeroMise(numeroMise):
     #Verification si le numero mise est belle et bien dans 0-49 et reste dans la boucle que si la condition n'est pas respecter
     numeroMise = -1
     while numeroMise < 0 or numeroMise > 49:
-        numeroMise = input("Sur quel numéro souhaitez vous miser entre 0-49 ?\n")
-        
+        numeroMise = input(
+            "Sur quel numéro souhaitez vous miser entre 0-49 ?\n")
+
         try:
             numeroMise = int(numeroMise)
         #Dans le cas ou l'utlisateur a entrer un numero mise qui n'est pas un integer
@@ -121,11 +122,12 @@ while continuerPartie == True:
         #Dans le cas ou l'utilisateur a entrer un numero mise supérieur à 50
         if numeroMise > 49:
             print("Vous avez saisi un nombre supérieur à 49.\n")
-            
-    
+    return numeroMise;
+
+#ArgentMise
+def getArgentMise(argentMise,Joueur):
     #Verification si l'argent mise est belle et bien dans en norme avec l'argent du joueur et reste dans la boucle que si la condition n'est pas respecter
     argentMise = -1
-
     while argentMise <= 0 or argentMise > p1.argent:
 
         print("Combien souhaitez vous miser ?\n")
@@ -139,13 +141,22 @@ while continuerPartie == True:
             argentMise = -1
             continue
         #Dans le cas ou l'argent mise entrer par l'utilisateur est plus grand que l'argent sur le comtpe du joueur
-        if argentMise > p1.argent:
+        if argentMise > Joueur.argent:
             print("Vous ne pouvez miser plus que la totalité de votre argent sur votre compte\n")
         #Dans le cas ou l'argent mise entrer par l'utilisateur est négatif
         if argentMise <= 0:
             print("Vous ne pouvez pas miser une somme nulle ou négative\n")
+    return argentMise;
 
+while continuerPartie == True:
     
+    #Verification si le numero mise est belle et bien dans 0-49 et reste dans la boucle que si la condition n'est pas respecter
+    numeroMise = 1
+    numeroMise = getNumeroMise(numeroMise)
+    #attribution des valeur de l'argent mise
+    argentMise = 1
+    argentMise = getArgentMise(argentMise,p1)
+        
     #Fonction dans la classe Casino qui lance ce qui se passe quand le joueur joue à la roulette
     c1.jouer_roulette(argentMise,numeroMise,p1)
     
